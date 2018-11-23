@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+ipython = "*"
+
+[packages]
+django = "~=2.0"
+python-decouple = "*"
+
+[requires]
+python_version = "{{ cookiecutter.python_version }}"
