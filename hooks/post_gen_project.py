@@ -47,7 +47,7 @@ if __name__ == '__main__':
     DATABASE_URL = ''.join([
         'postgres://postgres:{}'.format(get_random_string()),
         '@127.0.0.1:5432/',
-        '{{ cookiecutter.project_dj_name }}'
+        '{{ cookiecutter.project_dj_name }}{}'.format('_db')
     ])
 
     with open('.env', 'w') as fp:
@@ -56,6 +56,8 @@ if __name__ == '__main__':
         fp.write('ALLOWED_HOSTS=localhost,127.0.0.1,[::1]\n')
         fp.write('LANGUAGE_CODE={{ cookiecutter.language_code }}\n')
         fp.write('TIME_ZONE={{ cookiecutter.time_zone }}\n')
+        {% if cookiecutter.database_engine == 'postgresql' %}
         fp.write('DATABASE_URL={}\n'.format(DATABASE_URL))
+        {% endif %}
 
     sys.exit(0)

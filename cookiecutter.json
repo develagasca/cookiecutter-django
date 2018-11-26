@@ -2,8 +2,9 @@
   "project_name": "Just Another Django Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "project_dj_name": "{{ cookiecutter.project_slug.lower().replace('-', '_') }}",
-  "python_version": "3.7",
+  "database_engine": ["sqlite3", "postgresql"],
   "debug": "False",
   "language_code": "en-us",
-  "time_zone": "UTC"
+  "time_zone": "UTC",
+  "python_version": "3.7"
 }
